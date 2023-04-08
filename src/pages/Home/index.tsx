@@ -1,10 +1,22 @@
 import { useEffect, useState } from "react";
 import { NavBar } from "../../components/Navbar";
-import { SectionTitle } from "../../components/Section/SectionTitle";
+import { SectionGrid } from "../../components/Section/SectionGrid";
+import { SectionGridItem } from "../../components/Section/SectionGrid/SectionGridItem";
 
 export function Home() {
 
-    const [scrollNavbarTransparent,setScrollNavbarTransparent] = useState(true);
+    const [scrollNavbarTransparent, setScrollNavbarTransparent] = useState(true);
+
+    const skillsImages = [
+        "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+        "https://cdn-icons-png.flaticon.com/512/6132/6132221.png",
+        "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+        "https://cdn-icons-png.flaticon.com/512/6132/6132221.png",
+        "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+        "https://cdn-icons-png.flaticon.com/512/6132/6132221.png",
+        "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+        "https://cdn-icons-png.flaticon.com/512/6132/6132221.png",
+    ]
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,8 +36,8 @@ export function Home() {
 
     return (
         <>
-            <NavBar transparent = {scrollNavbarTransparent} />
-            <div className="flex w-full h-[100vh] bg-banner-background bg-no-repeat bg-cover justify-center items-center">
+            <NavBar transparent={scrollNavbarTransparent} />
+            <div className="flex w-full h-[100vh] bg-banner-background bg-no-repeat bg-cover justify-center items-center" id="home">
                 <div className="flex w-full h-full items-center justify-center flex-col text-center bg-[rgba(0,0,0,0.7)]">
                     <div className="flex justify-between flex-row">
                         <h1 className="font-inter font-bold text-3xl text-gray-200"> Hello!</h1>
@@ -36,12 +48,20 @@ export function Home() {
                 </div>
             </div>
 
-            <div className="w-full h-[400px]">
-                <div className="mt-10">
-                    <SectionTitle title="About" />
-                </div>
 
-            </div>
+            <SectionGrid title="About" id="about">
+                <SectionGridItem title="Skills" imageUrl="" description="" grid={true} gridItens={skillsImages} />
+                <SectionGridItem title="Certifications" imageUrl="" description="" />
+                <SectionGridItem title="Experience" imageUrl="" description="" />
+            </SectionGrid>
+
+
+            <SectionGrid title="Projects" id="projects">
+                <SectionGridItem title="Skills" imageUrl="" description="" grid={true} gridItens={skillsImages} />
+                <SectionGridItem title="Certifications" imageUrl="" description="" />
+                <SectionGridItem title="Experience" imageUrl="" description="" />
+            </SectionGrid>
+
 
 
 

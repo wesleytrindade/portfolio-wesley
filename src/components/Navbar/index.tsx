@@ -44,10 +44,11 @@ export function NavBar({ transparent = false }: NavBarProps) {
 
 
 
-                <nav className="lg:flex w-[70%] justify-center ml-2 hidden">
-                    <NavbarItem href="#" text="About" transparent={transparent} />
-                    <NavbarItem href="#" text="Projects" transparent={transparent} />
-                    <NavbarItem href="#" text="Contact" transparent={transparent} />
+                <nav className="lg:flex w-[70%] justify-center ml-6 hidden">
+                    <NavbarItem href="#home" text="Home" transparent={transparent} />
+                    <NavbarItem href="#about" text="About" transparent={transparent} />
+                    <NavbarItem href="#projects" text="Projects" transparent={transparent} />
+                    <NavbarItem href="#contact" text="Contact" transparent={transparent} />
                 </nav>
             </section>
 
